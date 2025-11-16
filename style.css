@@ -1,0 +1,442 @@
+/* ===== Global Style ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #5dd1e0;
+    scroll-behavior: smooth;
+}
+
+/* ===== Navbar ===== */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #11a9d8;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffdd57;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ===== HERO SECTION ===== */
+#hero {
+    text-align: center;
+    padding: 190px 20px 140px;
+    animation: fadeIn 1.5s ease;
+}
+
+#hero h1 {
+    font-size: 5.2rem;
+    margin-bottom: 10px;
+}
+
+#hero span {
+    color: #ffdd57;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffdd57;
+    border-radius: 25px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
+}
+
+/* ===== Sections ===== */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+    animation: fadeUp 1.3s ease-in-out;
+}
+
+h2 {
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ===== Skills ===== */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: rgba(255,255,255,0.2);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #ffdd57;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ===== Projects ===== */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.25);
+}
+
+/* ===== Contact Form ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.8);
+}
+
+form button {
+    padding: 12px;
+    background: #ffdd57;
+    border: none;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #fff;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        background: rgba(0,0,0,0.7);
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 10px;
+        text-align: right;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+.ripple {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleEffect 0.6s linear;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+/* Subtitle */
+.contact-subtitle {
+    opacity: 0.8;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contact Cards */
+.contact-card {
+    padding: 30px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated icon */
+.contact-card .icon {
+    font-size: 2.7rem;
+    margin-bottom: 12px;
+    animation: float 2s infinite ease-in-out;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* Title */
+.contact-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+/* Hover glow effect */
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Instagram gradient */
+.ig-card {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+/* Email */
+.email-card {
+    background: #4285F4;
+}
+
+/* Messenger */
+.msgr-card {
+    background: linear-gradient(45deg, #0084ff, #00c6ff);
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        width: 85%;
+    }
+}
+/* Default light mode */
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --card: #ffffff;
+    --hover: #e8e8e8;
+}
+
+/* Dark mode variables */
+.dark-mode {
+    --bg: #111;
+    --text: #fff;
+    --card: #1c1c1c;
+    --hover: #292929;
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--bg);
+    color: var(--text);
+    padding: 100px 20px;
+    text-align: center;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.contact-subtitle {
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+/* Contact buttons modern */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.contact-btn {
+    padding: 22px;
+    background: var(--card);
+    border-radius: 18px;
+    color: var(--text);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-btn:hover {
+    background: var(--hover);
+    transform: translateY(-6px);
+}
+
+/* Emoji icons animated */
+.contact-btn span {
+    font-size: 2rem;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-top: 40px;
+    padding: 12px 20px;
+    display: inline-block;
+    background: var(--card);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--hover);
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        width: 85%;
+    }
+}
+/* Hidden state before animation */
+.slide-left,
+.slide-right,
+.slide-bottom {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* Custom positions */
+.slide-left {
+    transform: translateX(-60px);
+}
+
+.slide-right {
+    transform: translateX(60px);
+}
+
+.slide-bottom {
+    transform: translateY(60px);
+}
+
+/* Visible when scrolled */
+.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
